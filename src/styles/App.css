@@ -1,0 +1,57 @@
+html body {
+	font-family: "Work Sans", sans-serif !important;
+}
+
+.years-select-prefix__control {
+	background-color: #000 !important;
+}
+.years-select-prefix__indicator,
+.years-select-prefix__input,
+.years-select-prefix__single-value {
+	color: #ffcd00 !important;
+}
+.years-select-prefix__control--is-focused {
+	border-color: #ffcd00 !important;
+	box-shadow: 0 0 0 0 #ffcd00 !important;
+}
+
+.years-select-prefix__option {
+	background-color: #000 !important;
+}
+.years-select-prefix__option:hover,
+.years-select-prefix__option:active {
+	background-color: #ffcd00 !important;
+}
+.years-select-prefix__menu-list {
+	background-color: #000 !important;
+}
+.years-select-prefix__menu {
+	background-color: #000 !important;
+}
+
+
+ul {
+	padding: 30px 0 20px 16px;
+}
+
+li {
+	margin: 16px 0;
+	font-weight: 400;
+}
+
+h6{
+	font-weight: 400;
+}
+
+.theader{
+	-webkit-text-stroke-width: 6px;
+  -webkit-text-stroke-color: #373738b9;
+	font-size: 21vh !important;
+	font-weight: bold !important;
+	color: #000;
+	line-height: 1.1 !important;
+	overflow: hidden;
+	margin-right: 20px;
+	opacity: 0.5;
+}
+

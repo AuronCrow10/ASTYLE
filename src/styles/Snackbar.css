@@ -1,0 +1,10 @@
+.snackbar-loading {
+	display: flex;
+	flex-direction: "row";
+	gap: 16px;
+	align-items: center;
+	justify-content: center;
+	background-color: #393e4d;
+	padding: 16px 32px;
+	border-radius: 8px;
+}

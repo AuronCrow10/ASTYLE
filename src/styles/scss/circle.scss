@@ -1,0 +1,31 @@
+@keyframes wave-down {
+	0% {
+		box-shadow: 0 5px 15px 5px #ffcc00;
+	}
+	50% {
+		box-shadow: 0 10px 20px 10px #ffcc00;
+	}
+	100% {
+		box-shadow: 0 5px 15px 5px #ffcc00;
+	}
+}
+
+@keyframes wave-up {
+	0% {
+		box-shadow: 0 -5px 15px 5px #ffcc00;
+	}
+	50% {
+		box-shadow: 0 -10px 20px 10px #ffcc00;
+	}
+	100% {
+		box-shadow: 0 -5px 15px 5px #ffcc00;
+	}
+}
+
+.circle.down {
+	animation: wave-down 3s infinite;
+}
+
+.circle.up {
+	animation: wave-up 3s infinite;
+}

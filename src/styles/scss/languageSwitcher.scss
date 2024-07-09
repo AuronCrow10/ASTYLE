@@ -1,0 +1,51 @@
+.language-switcher {
+	position: relative; // For dropdown positioning
+
+	button {
+		background: none;
+		border: none;
+		cursor: pointer;
+	}
+	.selected-language {
+		aspect-ratio: 1;
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		padding: 8px;
+		background-color: rgb(120, 120, 120, 0.8);
+		border-radius: 50%;
+	}
+	.language-dropdown {
+		position: absolute;
+		top: 100%; // Place it below the button
+		list-style: none;
+		padding: 0;
+		background-color: transparent;
+		z-index: 10; // Ensure it appears on top
+		transform: translateY(-15%);
+		animation: slideDown 0.3s ease-in-out; // Simple slide-down animation
+		li {
+			padding: 8px;
+			cursor: pointer;
+			display: flex; // Align flag and text
+			align-items: center;
+			gap: 5px; // Space between flag and text
+			background-color: gray;
+			border-radius: 50%;
+			&:hover {
+				background-color: rgb(107, 107, 107);
+			}
+		}
+	}
+
+	@keyframes slideDown {
+		from {
+			transform: translateY(-40%);
+			opacity: 0;
+		}
+		to {
+			transform: translateY(-15%);
+			opacity: 1;
+		}
+	}
+}

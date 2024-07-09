@@ -1,0 +1,15 @@
+.button {
+	font-size: 16px !important;
+	border-radius: 20px !important;
+	padding: 5px 20px !important;
+	font-weight: bold !important;
+	color: #fff !important;
+	border: 2px solid #ddd !important;
+	background-color: transparent !important;
+
+	&.active {
+		color: #000 !important;
+		border-color: #ffae0d !important;
+		background-color: #ffae0d !important;
+	}
+}

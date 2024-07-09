@@ -1,0 +1,25 @@
+.change-language-buttons {
+	.flag-container {
+		display: flex;
+		padding: 0.4em;
+		background-color: transparent;
+		border-radius: 50%;
+		border: #f5f5f585 solid;
+		width: 40px;
+		height: 40px;
+	}
+	.active-language {
+		.flag-container {
+			background-color: #f5f5f585;
+		}
+	}
+	.memu & > div:has(.active-language) {
+		display: flex;
+	}
+	.menu & > div:not(.active-language) {
+		display: none;
+	}
+	.menu:hover & > div {
+		display: flex !important;
+	}
+}

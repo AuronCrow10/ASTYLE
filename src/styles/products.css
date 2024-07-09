@@ -1,0 +1,17 @@
+.cardContainer {
+	border-radius: 16px;
+	padding: 32px;
+	background: rgba(19, 23, 33, 0.2);
+	backdrop-filter: blur(10px);
+	box-shadow: 0 8px 32px 0 rgba(20, 122, 122, 0.37);
+	border: 1px solid rgba(19, 23, 33, 0.18);
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	height: fill-available;
+}
