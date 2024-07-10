@@ -6,13 +6,12 @@ import { Html } from "@react-three/drei";
 import { Scene } from "./Scene/Scene";
 import TextHero from "./Scene/text";
 import GradientPlane2 from "./Scene/GradentPlane2";
+import Loading from "../Loading";
 
 function InsideCanvas() {
 	return (
 		<>
-			<Suspense>
-				<Scene />
-			</Suspense>
+			<Scene />
 			<TextHero />
 			<GradientPlane2 />
 			<ambientLight intensity={1} />
@@ -34,27 +33,29 @@ function HeroAnimationContainer() {
 			style={{
 				height: "100vh",
 				width: "100vw",
-				background: "#FFCC00",
+				background: "black",
 				zIndex: 1001,
 			}}
 		>
-			<Canvas
-				linear
-				shadows
-				camera={{ position: [0, 0, 20] }}
-				onCreated={({ gl }) => {
-					gl.shadowMap.enabled = true;
-					gl.shadowMap.type = THREE.PCFSoftShadowMap;
-				}}
-				gl={{
-					powerPreference: "high-performance",
-					alpha: false,
-					antialias: false,
-					stencil: false,
-				}}
-			>
-				<InsideCanvas />
-			</Canvas>
+			<Suspense fallback={<Loading />}>
+				<Canvas
+					linear
+					shadows
+					camera={{ position: [0, 0, 20] }}
+					onCreated={({ gl }) => {
+						gl.shadowMap.enabled = true;
+						gl.shadowMap.type = THREE.PCFSoftShadowMap;
+					}}
+					gl={{
+						powerPreference: "high-performance",
+						alpha: false,
+						antialias: false,
+						stencil: false,
+					}}
+				>
+					<InsideCanvas />
+				</Canvas>
+			</Suspense>
 		</div>
 	);
 }
