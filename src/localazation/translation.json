@@ -119,5 +119,69 @@
 			"buy": "Compra $A-STYLE Ora!",
 			"raised": "Raccolti"
 		}
+	},
+
+	"es": {
+		"translation": {
+			"landing.gotoPresale": "IR A LA PREVENTA",
+			"landing.3D.text": "Bienvenido a A-style, donde la innovación y la tradición convergen en una combinación perfecta de mundos físicos y digitales.",
+			"landing.searcCopyTitle.text": "La conexión entre Web3 y",
+			"landing.searcCopy.text": "Cada producto de A-STYLE a la venta en el mercado tendrá una etiqueta NFC única. Esta etiqueta NFC única habilitará una cantidad de tokens A-$TYLE correlacionados con el precio de venta del producto. Puedes almacenar estos tokens en tu cartera criptográfica o usarlos en el Mundo A-STYLE para comprar Productos y servicios Especiales dedicados.",
+			"landing.certifiedHistory.text": "Al escanear la etiqueta NFC con tu teléfono inteligente, puedes verificar la autenticidad de tu producto A-STYLE y acceder al ecosistema A-STYLE para rastrear tokens y explorar ofertas exclusivas. Acepta un futuro donde cada producto ofrece beneficios y experiencias digitales únicos.",
+			"landing.certifiedHistoryTitle.text": "Desbloquea Autenticidad y Beneficios Exclusivos con",
+			"video.title": "Empieza tu Viaje A-Style",
+			"video.subtitle": "Descubre más ahora",
+			"roadmap.t1": "Descubre el próximo",
+			"roadmap.t2": "Mira el video y aprende cómo funciona el ecosistema A-STYLE",
+			
+			"roadmap.t3.1": "Desarrollo de Productos A-style",
+			"roadmap.t3.2": "Etiqueta NFC",
+			"roadmap.t3.3": "Base de datos SQL, Correlación entre Productos A-style y A-token",
+			"roadmap.t3.4": "Desarrollo del Mercado Web",
+			"roadmap.t3.5": "Mejora de Seguridad",
+			"roadmap.t3.6": "Marketing Internacional de la Marca A-style",
+			
+			"roadmap.t4.1": "Integración del Equipo",
+			"roadmap.t4.2": "Configuración de liquidez de tokens y mejora de Web3",
+			"roadmap.t4.3": "Logística de productos",
+			"roadmap.t4.4": "Inicio de ventas en línea de productos físicos",
+			"roadmap.t4.5": "Marketing Online/Offline; Redes sociales, Prensa, Visibilidad de la marca offline.",
+			"roadmap.t4.6": "Mejora del Club A-style",
+
+
+			"roadmap.t5.1": "Mejora de la correlación entre Web3 y Producto",
+			"roadmap.t5.2": "Red de Distribución de Productos",
+			"roadmap.t5.3": "Impulso de Marketing: Visibilidad de la marca, Web, Eventos y Espectáculos",
+
+
+			"roadmap.t6": "Desarrollo de productos A-style: co-branding y colaboraciones de estilo",
+			
+			
+			"step1.title": "Paso 1 (Preventa)",
+			"step1.text.1": "A-STYLE llega a Web3 e inicia la distribución del token A-$TYLE",
+			"step1.text.2": "Poseer tokens A-$TYLE significa unirse al A-Club y disfrutar de A-STYLE",
+			"step1.text.3": "Web3 amplifica, apoya y promueve el siguiente paso, también sirviendo como una herramienta esencial para prevenir la falsificación de productos A-STYLE",
+			
+			
+			"step2.title": "Paso 2 (Venta)",
+			"step2.text.1": "A-STYLE llega a Web3 e inicia la distribución del token A-$TYLE.",
+			"step2.text.2": "Poseer tokens A-$TYLE significa unirse al A-Club y disfrutar de A-STYLE.",
+			"step2.text.3": "Web3 amplifica, apoya y promueve el siguiente paso, también sirviendo como una herramienta esencial para prevenir la falsificación de productos A-STYLE.",
+			
+			"text.months": "meses",
+
+			"brandTitle.1" : "El Vínculo Único Entre",
+			"brandTitle.2" : "Productos y Tokens",
+	
+			"brandText" : "Por cada producto comprado y registrado, el 10% de su valor será comprado y quemado del suministro en circulación, aumentando la rareza del producto y del token con el tiempo.",
+			"brandText.1" : "Vamos a crear una relación única entre productos A-STYLE de primer nivel y el increíble token A-$TYLE",
+
+			"referral.text" : "Conecta tu cartera y obtén un enlace de referencia del 10%",
+			"updateprice" : "Actualizar Precio",
+			"buynow" : "COMPRAR AHORA",
+			"buy" : "¡Compra $A-STYLE Ahora!",
+			"raised" : "Recaudado"
+		}
 	}
+
 }

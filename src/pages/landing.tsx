@@ -15,6 +15,8 @@ import { useState } from "react";
 export const Landing = () => {
 
 	return (
+
+		
 		<>
 			<div style={{ position: "relative" }}>
 				<NavebarGlass />

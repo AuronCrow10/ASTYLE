@@ -384,7 +384,7 @@ export const Hero2 = () => {
             }}
           >
             <img
-              src="/AlogoComplete.svg"
+              src="/AlogoComplete.png"
               style={{
                 maxWidth: window.innerWidth > 600 ? "120px" : "100px",
                 display: "none",
@@ -429,7 +429,7 @@ export const Hero2 = () => {
               sx={{
                 fontFamily: "Work Sans !important",
                 fontWeight: "800",
-                fontSize: window.innerWidth < 600 ? "40px" : "56px",
+                fontSize: window.innerWidth < 600 ? "32px" : "56px",
                 marginTop: window.innerWidth < 600 ? "16px" : "80px",
               }}
             >
@@ -562,11 +562,11 @@ export const Hero2 = () => {
 
               <Stack
                 direction="row"
-                spacing={4}
+                spacing={1}
                 justifyContent="center"
                 alignItems="center"
                 sx={{
-                  marginBottom: "16px",
+                  marginBottom: "32px !important",
                 }}
                 style={{
                   display: activeTab !== 0 ? "none" : "flex",
@@ -671,7 +671,7 @@ export const Hero2 = () => {
                       color="secondary"
                       sx={{
                         textTransform: "none",
-                        margin: "24px auto 8px",
+                        margin: "24px auto 32px !important",
                         fontWeight: "600",
                         padding: "10px 60px",
                         borderRadius: "100px",

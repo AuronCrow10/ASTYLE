@@ -20,6 +20,7 @@ import {
 } from "@web3modal/ethers/react";
 import { BrowserProvider, Contract, formatUnits, getAddress } from "ethers";
 import { Container } from "@mui/material";
+import TestScroll from "../components/testScroll";
 
 const projectId = "df8cb4fb25bd233a5125ccd99de3edcd";
 

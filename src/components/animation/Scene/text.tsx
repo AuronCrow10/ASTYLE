@@ -65,7 +65,7 @@ function SphereWithHtml() {
 						alignItems: "center",
 					}}
 				>
-					<img alt="logo" src="/AlogoComplete.svg" width="240px" />
+					<img alt="logo" src="/AlogoComplete.png" width="240px" />
 
 					<Typography
 						variant="h6"

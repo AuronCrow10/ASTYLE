@@ -9,7 +9,23 @@
 
 	&.active {
 		color: #000 !important;
-		border-color: #ffae0d !important;
-		background-color: #ffae0d !important;
+		border-color: #ffcd00 !important;
+		background-color: #ffcd00 !important;
 	}
+}
+
+.navitem{
+	margin: 0;
+	font: inherit;
+	color: inherit;
+	-webkit-text-decoration: none;
+	text-decoration: none;
+	color: inherit;
+	font-family: Work Sans !important;
+	font-weight: 600;
+	color: #fff;
+	margin-left: 32px;
+	font-size: 16px;
+	text-transform: uppercase;
+	cursor: pointer;
 }
