@@ -6,7 +6,6 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router";
 import {
 	Container,
-	Slide,
 	Typography,
 	useScrollTrigger,
 	useTheme,
@@ -19,78 +18,64 @@ import Button from "@mui/material/Button";
 import { useTranslation } from "react-i18next";
 import { Box } from "./MUI/MuiBox";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { Link, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
-import React, { useEffect } from 'react';
+import { Link } from "react-scroll";
+import React, { useState, useEffect } from "react";
+import Slide from "@mui/material/Slide";
 
-function HideOnScroll(props: any) {
-	const { children } = props;
-	// Note that you normally won't need to set the window ref as useScrollTrigger
-	// will default to window.
-	// This is only being set here because the demo is in an iframe.
-	const trigger = useScrollTrigger();
+interface HideOnScrollProps {
+	children: React.ReactElement;
+	threshold?: number;
+}
+
+const HideOnScroll: React.FC<HideOnScrollProps> = ({
+	children,
+	threshold = 100,
+}) => {
+	const [show, setShow] = useState(true);
+	const [lastScrollY, setLastScrollY] = useState(0);
+
+	const handleScroll = () => {
+		const currentScrollY = window.scrollY;
+
+		if (currentScrollY > lastScrollY && currentScrollY > threshold) {
+			setShow(false);
+		} else {
+			setShow(true);
+		}
+
+		setLastScrollY(currentScrollY);
+	};
+
+	useEffect(() => {
+		window.addEventListener("scroll", handleScroll);
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, [lastScrollY, threshold]);
+
 	return (
-		<Slide appear={false} direction="down" in={!trigger}>
+		<Slide appear={false} direction="down" in={show}>
 			{children}
 		</Slide>
 	);
-}
+};
 
 export default function NavebarGlass() {
-	useEffect(() => {
-
-		// Registering the 'begin' event and logging it to the console when triggered.
-		Events.scrollEvent.register('begin', (to: any, element: any) => {
-			console.log('begin', to, element);
-		});
-
-		// Registering the 'end' event and logging it to the console when triggered.
-		Events.scrollEvent.register('end', (to: any, element: any) => {
-			console.log('end', to, element);
-		});
-
-		// Updating scrollSpy when the component mounts.
-		scrollSpy.update();
-
-		// Returning a cleanup function to remove the registered events when the component unmounts.
-		return () => {
-			Events.scrollEvent.remove('begin');
-			Events.scrollEvent.remove('end');
-		};
-	}, []);
-
-	// Function to handle the activation of a link.
-	const handleSetActive = (to: any) => {
-		console.log(to);
-	};
 	const navigate = useNavigate();
 	const theme = useTheme();
-	const { t } = useTranslation();
 	const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
-
-	function redirect(url: string) {
-		window.location.href = url;
-	}
 
 	const toggleDrawer = () => {
 		setIsDrawerOpen(!isDrawerOpen);
 	};
-
 	const links = [
 		{ label: "A-STYLE", path: "/", element: null },
 		{ label: "Whitepaper", path: "/whitepaper.pdf", element: null },
 		{
-			label: "Roadmap", path: "/", element: <Link
-				activeClass="active"
-				to="roadmap"
-				spy={true}
-				className="navitem"
-				smooth={true}
-				offset={50}
-				duration={500}
-				onSetActive={handleSetActive}
-			>
-				Roadmap
-			</Link>
+			label: "Roadmap",
+			path: "/#roadmap",
+			element: null,
 		},
 		{ label: "Presale", path: "/presale", element: null },
 	];
@@ -124,7 +109,10 @@ export default function NavebarGlass() {
 					return (
 						<>
 							{link.element != null ? (
-								<ListItem key={index} sx={{ color: "white !important" }}>
+								<ListItem
+									key={index}
+									sx={{ color: "white !important" }}
+								>
 									{link.element}
 								</ListItem>
 							) : (
@@ -168,7 +156,7 @@ export default function NavebarGlass() {
 
 	return (
 		<>
-			<HideOnScroll>
+			<HideOnScroll threshold={0}>
 				<AppBar
 					position="fixed"
 					sx={{
@@ -198,7 +186,6 @@ export default function NavebarGlass() {
 								padding: "16px",
 								borderRadius: "8px",
 								gap: "16px",
-
 							}}
 						>
 							{links.map((link) => {
@@ -213,7 +200,8 @@ export default function NavebarGlass() {
 												underline="hover"
 												className="navitem"
 												sx={{
-													fontFamily: "Work Sans !important",
+													fontFamily:
+														"Work Sans !important",
 													fontWeight: "600",
 													color: "#fff",
 													marginLeft: 4,
@@ -255,8 +243,7 @@ export default function NavebarGlass() {
 								onClick={toggleDrawer}
 								sx={{
 									marginLeft: "auto",
-									background:
-										"transparent",
+									background: "transparent",
 								}}
 							>
 								{isDrawerOpen ? <CloseIcon /> : <MenuIcon />}
