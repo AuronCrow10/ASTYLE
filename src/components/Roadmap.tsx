@@ -20,10 +20,10 @@ import {
 } from "react-scroll";
 import React, { useEffect } from "react";
 import "../styles/scss/roadmap.scss";
+import Container from "@mui/material/Container";
 export default function Roadmap() {
 	return (
 		<>
-			<Element name="roadmap" className="element"></Element>
 			<div style={{ position: "relative" }}>
 				<Box
 					sx={{
@@ -43,8 +43,8 @@ export default function Roadmap() {
 						}}
 					>
 						<div id="roadmap"></div>
-						{t("roadmap.t1")}
-						<span style={{ color: "#ffcd00" }}>Step</span>
+						{t("roadmap.t1")} 
+						<span style={{ color: "#ffcd00" }}> Step</span>
 					</Typography>
 					<Typography
 						mt={2}
@@ -61,101 +61,105 @@ export default function Roadmap() {
 
 					<br></br>
 					<br></br>
+					<Container>
 
-					<Timeline
-						sx={{
-							[`& .${timelineOppositeContentClasses.root}`]: {
-								flex: { xs: 0.01, md: 0.5 },
-							},
-						}}
-					>
-						<TimelineItem>
-							<TimelineOppositeContent color="textSecondary"></TimelineOppositeContent>
-							<TimelineSeparator>
-								<TimelineDot />
-								<TimelineConnector />
-							</TimelineSeparator>
-							<TimelineContent>
-								<Typography variant="h6" component="span">
-									<b>Presale</b>
-								</Typography>
-								<Typography>
-									<ul>
-										<li>{t("roadmap.t3.1")} </li>
-										<li>
-											{" "}
-											<b>{t("roadmap.t3.2")}</b>:{" "}
-											{t("roadmap.t3.3")}{" "}
-										</li>
-										<li>{t("roadmap.t3.4")}</li>
-										<li>{t("roadmap.t3.5")}</li>
-										<li>{t("roadmap.t3.6")}</li>
-									</ul>
-								</Typography>
-							</TimelineContent>
-						</TimelineItem>
+						<Timeline
+							sx={{
+								[`& .${timelineOppositeContentClasses.root}`]: {
+									flex: { xs: 0.01, md: 0.5 },
+								},
+							}}
+						>
+							<TimelineItem>
+								<TimelineOppositeContent color="textSecondary"></TimelineOppositeContent>
+								<TimelineSeparator>
+									<TimelineDot />
+									<TimelineConnector />
+								</TimelineSeparator>
+								<TimelineContent>
+									<Typography variant="h6" component="span">
+										<b>Presale</b>
+									</Typography>
+									<Typography>
+										<ul>
+											<li>{t("roadmap.t3.1")} </li>
+											<li>
+												{" "}
+												<b>{t("roadmap.t3.2")}</b>:{" "}
+												{t("roadmap.t3.3")}{" "}
+											</li>
+											<li>{t("roadmap.t3.4")}</li>
+											<li>{t("roadmap.t3.5")}</li>
+											<li>{t("roadmap.t3.6")}</li>
+										</ul>
+									</Typography>
+								</TimelineContent>
+							</TimelineItem>
 
-						<TimelineItem>
-							<TimelineOppositeContent color="textSecondary"></TimelineOppositeContent>
-							<TimelineSeparator>
-								<TimelineDot />
-								<TimelineConnector />
-							</TimelineSeparator>
-							<TimelineContent>
-								<Typography variant="h6" component="span">
-									<b>+4 {t("text.months")}</b>
-								</Typography>
-								<Typography>
-									<ul>
-										<li>{t("roadmap.t4.1")}</li>
-										<li>{t("roadmap.t4.2")} </li>
-										<li>{t("roadmap.t4.3")}</li>
-										<li>{t("roadmap.t4.4")} </li>
-										<li>{t("roadmap.t4.5")} </li>
-										<li>{t("roadmap.t4.6")}</li>
-									</ul>
-								</Typography>
-							</TimelineContent>
-						</TimelineItem>
+							<TimelineItem>
+								<TimelineOppositeContent color="textSecondary"></TimelineOppositeContent>
+								<TimelineSeparator>
+									<TimelineDot />
+									<TimelineConnector />
+								</TimelineSeparator>
+								<TimelineContent>
+									<Typography variant="h6" component="span">
+										<b>+4 {t("text.months")}</b>
+									</Typography>
+									<Typography>
+										<ul>
+											<li>{t("roadmap.t4.1")}</li>
+											<li>{t("roadmap.t4.2")} </li>
+											<li>{t("roadmap.t4.3")}</li>
+											<li>{t("roadmap.t4.4")} </li>
+											<li>{t("roadmap.t4.5")} </li>
+											<li>{t("roadmap.t4.6")}</li>
+										</ul>
+									</Typography>
+								</TimelineContent>
+							</TimelineItem>
 
-						<TimelineItem>
-							<TimelineOppositeContent color="textSecondary"></TimelineOppositeContent>
-							<TimelineSeparator>
-								<TimelineDot />
-								<TimelineConnector />
-							</TimelineSeparator>
-							<TimelineContent>
-								<Typography variant="h6" component="span">
-									<b>+4 {t("text.months")}</b>
-								</Typography>
-								<Typography>
-									<ul>
-										<li>{t("roadmap.t5.1")} </li>
-										<li>{t("roadmap.t5.2")}</li>
-										<li>{t("roadmap.t5.3")}</li>
-									</ul>
-								</Typography>
-							</TimelineContent>
-						</TimelineItem>
+							<TimelineItem>
+								<TimelineOppositeContent color="textSecondary"></TimelineOppositeContent>
+								<TimelineSeparator>
+									<TimelineDot />
+									<TimelineConnector />
+								</TimelineSeparator>
+								<TimelineContent>
+									<Typography variant="h6" component="span">
+										<b>+4 {t("text.months")}</b>
+									</Typography>
+									<Typography>
+										<ul>
+											<li>{t("roadmap.t5.1")} </li>
+											<li>{t("roadmap.t5.2")}</li>
+											<li>{t("roadmap.t5.3")}</li>
+										</ul>
+									</Typography>
+								</TimelineContent>
+							</TimelineItem>
 
-						<TimelineItem>
-							<TimelineOppositeContent color="textSecondary"></TimelineOppositeContent>
-							<TimelineSeparator>
-								<TimelineDot />
-								<TimelineConnector />
-							</TimelineSeparator>
-							<TimelineContent>
-								<Typography variant="h6" component="span">
-									<b>+4 {t("text.months")}</b>
-								</Typography>
-								<Typography>
-									<ul>
-										<li>{t("roadmap.t6")}</li>
-									</ul>
-								</Typography>
-							</TimelineContent>
-						</TimelineItem>
-					</Timeline>
+							<TimelineItem>
+								<TimelineOppositeContent color="textSecondary"></TimelineOppositeContent>
+								<TimelineSeparator>
+									<TimelineDot />
+									<TimelineConnector />
+								</TimelineSeparator>
+								<TimelineContent>
+									<Typography variant="h6" component="span">
+										<b>+4 {t("text.months")}</b>
+									</Typography>
+									<Typography>
+										<ul>
+										<li>{t("roadmap.t6.1")}</li>
+										<li>{t("roadmap.t6.2")}</li>
+										</ul>
+									</Typography>
+								</TimelineContent>
+							</TimelineItem>
+						</Timeline>
+					</Container>
+
 				</Box>
 				<Box
 					sx={{

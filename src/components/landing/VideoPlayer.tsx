@@ -2,6 +2,14 @@ import React from "react";
 import { Box } from "../MUI/MuiBox";
 import { Card, CardContent, Stack, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import {
+	Link,
+	Button,
+	Element,
+	Events,
+	animateScroll as scroll,
+	scrollSpy,
+} from "react-scroll";
 
 const ExampleCard = () => {
 	const { t } = useTranslation();
@@ -58,6 +66,8 @@ const ExampleCard = () => {
 				alignItems="center"
 				spacing={0}
 			></Stack>
+						<Element name="roadmap" className="element"></Element>
+
 		</Box>
 	);
 };

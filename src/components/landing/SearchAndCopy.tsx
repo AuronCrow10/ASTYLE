@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import "../../styles/scss/searchAndCopy.scss";
 import img2 from "../../assets/img2.png";
+import img4 from "../../assets/img4.png";
+import img5 from "../../assets/img5.png";
 import { useTranslation } from "react-i18next";
 
 export const SearchAndCopy = () => {
@@ -130,7 +132,7 @@ export const SearchAndCopy = () => {
             <img
               id="search-and-copy-image"
               className="search-and-copy-image"
-              src={img2}
+              src={img5}
             ></img>
             <div id="search-and-copy-first-bubble-background"></div>
             <div id="search-and-copy-second-bubble-background"></div>

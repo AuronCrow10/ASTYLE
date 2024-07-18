@@ -2,7 +2,8 @@ import { Box } from "../MUI/MuiBox";
 import { Button, Grid, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import "../../styles/scss/certifiedHistory.scss";
-import img3 from "../../assets/img3.png";
+import img4 from "../../assets/img4.png";
+import img2 from "../../assets/img2.png";
 import { useTranslation } from "react-i18next";
 import { useTranslationProvider } from "../../providers/TranslationProvider";
 import { useNavigate } from "react-router-dom";
@@ -127,9 +128,7 @@ export const TheBrand = () => {
                 marginTop: window.innerWidth > 600 ? "8vh" : "0",
               }}
             >
-              {t("brandTitle.1")}
-              <span style={{ color: "#ffcd00" }}>A-STYLE</span>
-              {t("brandTitle.2")}
+              {t("brandTitle.1")} <span style={{ color: "#ffcd00" }}> A-STYLE </span> {t("brandTitle.2")}
             </Typography>
             <Typography
               mt={2}
@@ -141,7 +140,7 @@ export const TheBrand = () => {
                 fontSize: window.innerWidth < 600 ? "16px" : "18px",
               }}
             >
-              {t("brandText")} <br></br>
+              {t("brandText")} <br></br> 
               {t("brandText.1")}
             </Typography>
             <Button
@@ -173,7 +172,7 @@ export const TheBrand = () => {
             <img
               id="certified-history-image"
               className="certified-history-image"
-              src={img3}
+              src={img2}
             ></img>
             <div id="certified-history-first-bubble-background"></div>
             <div id="certified-history-second-bubble-background"></div>

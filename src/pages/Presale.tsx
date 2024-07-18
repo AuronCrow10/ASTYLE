@@ -75,8 +75,9 @@ export const Presale = () => {
           }}
         >
           <Hero2 />
-          <Footer></Footer>
         </Container>
+				<Footer></Footer>
+
       </div>
     </>
   );
