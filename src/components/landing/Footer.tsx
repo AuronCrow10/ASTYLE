@@ -9,6 +9,9 @@ import { useNavigate } from "react-router-dom";
 export const Footer = () => {
 	const navigate = useNavigate();
 
+	const redirect = (url:string) => {
+		window.location.href = url;
+	}
 	return (
 		<Box
 			sx={{
