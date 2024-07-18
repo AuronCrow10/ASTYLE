@@ -71,7 +71,7 @@ export default function NavebarGlass() {
 	};
 	const links = [
 		{ label: "A-STYLE", path: "/", element: null },
-		{ label: "Whitepaper", path: "/whitepaper.pdf", element: null },
+		{ label: "Whitepaper", path: "../A-STYLE_WHITEPAPER.pdf", element: null },
 		{
 			label: "Roadmap",
 			path: "/#roadmap",
@@ -122,7 +122,7 @@ export default function NavebarGlass() {
 										color: "white !important",
 									}}
 									onClick={() => {
-										navigate(link.path);
+										link.label == "Whitepaper" ? window.open(link.path,"_blank") : navigate(link.path);
 										toggleDrawer();
 									}}
 								>
@@ -210,7 +210,7 @@ export default function NavebarGlass() {
 													cursor: "pointer",
 												}}
 												onClick={() => {
-													navigate(link.path);
+													link.label == "Whitepaper" ? window.open(link.path,"_blank") : navigate(link.path);
 												}}
 											>
 												{link.label}

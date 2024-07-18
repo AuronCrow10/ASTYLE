@@ -90,32 +90,13 @@ export const Privacy = () => {
 				information.
 			</p>
 
-			<h2>Changes to this Privacy Statement and Opting Out</h2>
-
-			<p>
-				If A-Style makes material changes to this Privacy Statement, we
-				will promptly post the updated version on our websites. By
-				opening an account with us, you are considered to accept the
-				revised Privacy Statement as actual notice.
-			</p>
-
-			<p>
-				Under specific circumstances, such as sharing your personal
-				information with non-affiliated third parties, you have the
-				option to opt out. Please contact us using the provided contact
-				information below to exercise this option. Note that for joint
-				accounts, an opt-out request made by one account owner applies
-				to all joint account holders. Each individual account at A-Style
-				requires a separate opt-out request.
-			</p>
-
 			<h2>Contact Information</h2>
 
 			<p>
 				For any questions or concerns regarding this Privacy Statement
 				or any other matters, please feel free to reach out to A-Style
 				at the following contact information:{" "}
-				<b>info@A-Styleforex.com</b>
+				<b>info@a-style.it</b>
 			</p>
 		</Container>
 	);

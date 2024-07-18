@@ -39,7 +39,6 @@ export const Footer = () => {
 								textAlign: { xs: "center", md: "unset" },
 								fontSize: "24px",
 								fontWeight: "bold",
-
 							}}
 						>
 							Social
@@ -58,9 +57,10 @@ export const Footer = () => {
 							<Grid item>
 								<IconButton
 									onClick={() =>
-									(window.location.href =
-										"mailto:support@example.com")
-									}
+										window.open(
+											"https://t.me/astyle_official",
+											"_blank")}
+
 									sx={{ color: "#fff" }}
 								>
 									<TelegramIcon />
@@ -70,7 +70,7 @@ export const Footer = () => {
 								<IconButton
 									onClick={() =>
 										window.open(
-											"https://facebook.com",
+											"https://www.facebook.com/AStyleFashion",
 											"_blank"
 										)
 									}
@@ -84,7 +84,7 @@ export const Footer = () => {
 								<IconButton
 									onClick={() =>
 										window.open(
-											"https://facebook.com",
+											"https://x.com/ASTYLE_official",
 											"_blank"
 										)
 									}
@@ -98,7 +98,7 @@ export const Footer = () => {
 								<IconButton
 									onClick={() =>
 										window.open(
-											"https://instagram.com",
+											"https://www.instagram.com/astyle__official",
 											"_blank"
 										)
 									}
@@ -154,7 +154,7 @@ export const Footer = () => {
 									}}
 								>
 									<a
-										href="mailto:support1@example.com"
+										href="mailto:info@a-style.it"
 										style={{
 											color: "#fff",
 											textDecoration: "none",
@@ -204,7 +204,7 @@ export const Footer = () => {
 								fontSize: "24px",
 								fontWeight: "bold",
 								textAlign: { xs: "center", md: "unset" },
-							
+
 							}}
 						>
 							Policy
@@ -240,7 +240,8 @@ export const Footer = () => {
 									</a>
 								</Typography>
 							</Grid>
-
+{
+	/* 
 							<Grid item>
 								<Typography
 									variant="body1"
@@ -261,7 +262,8 @@ export const Footer = () => {
 
 								</Typography>
 							</Grid>
-
+*/
+}
 
 							<Grid item>
 								<Typography
