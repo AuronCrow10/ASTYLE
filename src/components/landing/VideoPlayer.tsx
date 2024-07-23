@@ -21,6 +21,8 @@ const ExampleCard = () => {
 				padding: window.innerWidth > 600 ? "12vh 0" : "8vh 16px",
 			}}
 		>
+			<Element name="roadmap" className="element"></Element>
+
 			<Typography
 				variant="h3"
 				align="center"
@@ -34,6 +36,7 @@ const ExampleCard = () => {
 				{t("video.title")}
 
 			</Typography>
+
 			<Typography
 				mt={2}
 				variant="h6"
@@ -47,15 +50,13 @@ const ExampleCard = () => {
 				{t("video.subtitle")}
 			</Typography>
 			<video
-				autoPlay
-				loop
 				muted
 				controls
-				poster="http://localhost:3000/bgvideo.png"
+				poster="../bgvideo.png"
 				className="background-video"
 			>
 				<source
-					src="http://lowcalhost:3000/video.mp4"
+					src="../video.mp4"
 					type="video/mp4"
 				/>
 				Your browser does not support the video tag.
@@ -66,7 +67,6 @@ const ExampleCard = () => {
 				alignItems="center"
 				spacing={0}
 			></Stack>
-						<Element name="roadmap" className="element"></Element>
 
 		</Box>
 	);
