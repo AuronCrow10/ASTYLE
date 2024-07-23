@@ -9,10 +9,9 @@ export const Terms = () => {
 
 			<p>
 				A-STYLE sees Web3 not only as a platform to expand its brand but also as fertile ground to cultivate success similar to what was achieved in Milan many years ago. However, it is important to recognize the risks associated with token ownership, which could result in partial or total losses in case of unforeseen circumstances.
-				{" "}
 			</p>
 
-			<h2>Legal-Notice</h2>
+			<h2>Legal Notice</h2>
 
 			<p>
 				This document is neither a solicitation for investment nor an offer of digital currency, commodity, security, financial instrument, or any other type of investment or securities to the public. It does not represent a collective investment scheme and does not require registration or approval from any regulatory authority.

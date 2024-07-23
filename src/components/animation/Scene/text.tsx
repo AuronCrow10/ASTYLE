@@ -77,7 +77,7 @@ function SphereWithHtml() {
 							fontWeight: "bold",
 						}}
 					>
-						A Free Spirit
+						A-Free Spirit
 					</Typography>
 					<Typography
 						variant="body1"

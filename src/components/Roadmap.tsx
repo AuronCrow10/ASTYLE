@@ -43,7 +43,7 @@ export default function Roadmap() {
 						}}
 					>
 						<div id="roadmap"></div>
-						{t("roadmap.t1")} 
+						{t("roadmap.t1")}
 						<span style={{ color: "#ffcd00" }}> Step</span>
 					</Typography>
 					<Typography
@@ -78,19 +78,22 @@ export default function Roadmap() {
 								</TimelineSeparator>
 								<TimelineContent>
 									<Typography variant="h6" component="span">
-										<b>Presale</b>
+										<b>Presale +2 {t("text.months")}</b>
 									</Typography>
 									<Typography>
 										<ul>
 											<li>{t("roadmap.t3.1")} </li>
 											<li>
-												{" "}
-												<b>{t("roadmap.t3.2")}</b>:{" "}
+												{t("roadmap.t3.2")}
+											</li>
+											<li>
 												{t("roadmap.t3.3")}{" "}
 											</li>
 											<li>{t("roadmap.t3.4")}</li>
 											<li>{t("roadmap.t3.5")}</li>
-											<li>{t("roadmap.t3.6")}</li>
+											{
+												//<li>{t("roadmap.t3.6")}</li>
+											}
 										</ul>
 									</Typography>
 								</TimelineContent>
@@ -151,8 +154,8 @@ export default function Roadmap() {
 									</Typography>
 									<Typography>
 										<ul>
-										<li>{t("roadmap.t6.1")}</li>
-										<li>{t("roadmap.t6.2")}</li>
+											<li>{t("roadmap.t6.1")}</li>
+											<li>{t("roadmap.t6.2")}</li>
 										</ul>
 									</Typography>
 								</TimelineContent>
