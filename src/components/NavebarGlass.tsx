@@ -71,7 +71,11 @@ export default function NavebarGlass() {
 	};
 	const links = [
 		{ label: "A-STYLE", path: "/", element: null },
-		{ label: "Whitepaper", path: "../A-STYLE_WHITEPAPER.pdf", element: null },
+		{
+			label: "Whitepaper",
+			path: "../A-STYLE_WHITEPAPER.pdf",
+			element: null,
+		},
 		{
 			label: "Roadmap",
 			path: "/#roadmap",
@@ -122,7 +126,9 @@ export default function NavebarGlass() {
 										color: "white !important",
 									}}
 									onClick={() => {
-										link.label == "Whitepaper" ? window.open(link.path,"_blank") : navigate(link.path);
+										link.label == "Whitepaper"
+											? window.open(link.path, "_blank")
+											: navigate(link.path);
 										toggleDrawer();
 									}}
 								>
@@ -210,7 +216,12 @@ export default function NavebarGlass() {
 													cursor: "pointer",
 												}}
 												onClick={() => {
-													link.label == "Whitepaper" ? window.open(link.path,"_blank") : navigate(link.path);
+													link.label == "Whitepaper"
+														? window.open(
+																link.path,
+																"_blank"
+														  )
+														: navigate(link.path);
 												}}
 											>
 												{link.label}
@@ -230,24 +241,44 @@ export default function NavebarGlass() {
 						</Box>
 						<Box
 							sx={{
-								ml: "auto",
-								display: { xs: "block", md: "none" },
-								zIndex: theme.zIndex.modal + 2,
+								width: "100%",
+								display: { xs: "flex", md: "none" },
+								justifyContent: "space-between",
 							}}
 						>
-							<IconButton
-								size="large"
-								edge="end"
-								color="inherit"
-								aria-label="menu"
-								onClick={toggleDrawer}
+							<Box
 								sx={{
-									marginLeft: "auto",
-									background: "transparent",
+									width: "fit-content",
+									marginLeft: "16px",
+									padding: "16px",
+									paddingTop: "12px",
 								}}
 							>
-								{isDrawerOpen ? <CloseIcon /> : <MenuIcon />}
-							</IconButton>
+								<LanguageSwitcher />
+							</Box>
+							<Box
+								sx={{
+									zIndex: theme.zIndex.modal + 2,
+								}}
+							>
+								<IconButton
+									size="large"
+									edge="end"
+									color="inherit"
+									aria-label="menu"
+									onClick={toggleDrawer}
+									sx={{
+										marginLeft: "auto",
+										background: "transparent",
+									}}
+								>
+									{isDrawerOpen ? (
+										<CloseIcon />
+									) : (
+										<MenuIcon />
+									)}
+								</IconButton>
+							</Box>
 						</Box>
 					</Toolbar>
 				</AppBar>

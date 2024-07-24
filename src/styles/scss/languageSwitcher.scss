@@ -1,5 +1,5 @@
 .language-switcher {
-	position: relative; // For dropdown positioning
+	position: relative;
 
 	button {
 		background: none;
@@ -17,24 +17,28 @@
 	}
 	.language-dropdown {
 		position: absolute;
-		top: 100%; // Place it below the button
+		top: 100%;
 		list-style: none;
 		padding: 0;
 		background-color: transparent;
-		z-index: 10; // Ensure it appears on top
+		z-index: 10;
 		transform: translateY(-15%);
-		animation: slideDown 0.3s ease-in-out; // Simple slide-down animation
+		animation: slideDown 0.3s ease-in-out;
 		li {
 			padding: 8px;
 			cursor: pointer;
-			display: flex; // Align flag and text
+			display: flex;
 			align-items: center;
-			gap: 5px; // Space between flag and text
+			gap: 5px;
 			background-color: gray;
 			border-radius: 50%;
 			&:hover {
 				background-color: rgb(107, 107, 107);
 			}
+		}
+
+		@media (max-width: 700px) {
+			transform: translateY(-10%);
 		}
 	}
 
