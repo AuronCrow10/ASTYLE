@@ -3,6 +3,7 @@ import { Grid } from "@mui/material";
 import { useTranslationProvider } from "../providers/TranslationProvider";
 import IT from "country-flag-icons/react/3x2/IT";
 import GB from "country-flag-icons/react/3x2/GB";
+import ES from "country-flag-icons/react/3x2/ES";
 import $ from "jquery";
 import "../styles/scss/navbar.scss";
 import { useLocation } from "react-router-dom";
@@ -51,6 +52,18 @@ export const ChangeLanguage = () => {
 						<GB title="England" className="flag" />
 					</a>
 				</Grid>
+				<Grid item xs={3} id="es" className="language-icon es">
+					<a
+						className="flag-container"
+						style={{ marginLeft: "16px" }}
+						onClick={() => {
+							handleChangeLanguage("es");
+						}}
+					>
+						<ES title="Spanish" className="flag" />
+					</a>
+				</Grid>
+
 			</Grid>
 		</>
 	);

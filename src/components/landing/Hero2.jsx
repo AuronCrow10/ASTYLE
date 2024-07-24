@@ -42,13 +42,13 @@ let tokens = ["BNB", "ETH", "USDT", "USDC"];
 let string = "Connect Wallet";
 let string2 = "Claim";
 let string3 = "Buy";
-const contractAddress = "0x2De43CB2Cb094b70B955ba016eAF4B4F5E3EAE37";
+const contractAddress = "0x317bA26a766F9E5860Ba00DfCcc228030C821D9d";
 
 let tokenAddress = [
   "",
-  "0xd66c6B4F0be8CE5b39D52E0Fd1344c389929B378",
-  "0x337610d27c682E347C9cD60BD4b3b107C9d34dDd",
-  "0x64544969ed7EBf5f083679233325356EbE738930",
+  "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
+  "0x55d398326f99059fF775485246999027B3197955",
+  "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
 ];
 
 export const Hero2 = () => {
@@ -99,13 +99,15 @@ export const Hero2 = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (!hasLoaded) {
+      connect();
+    }
+  }, []);
+
   if (isConnected && address && !profileLoaded) {
     string = address.slice(0, 4) + "..." + address.slice(36, 42);
     getProfile();
-  }
-
-  if (!hasLoaded) {
-    connect();
   }
 
   async function getProfile() {
@@ -124,6 +126,57 @@ export const Hero2 = () => {
       setToClaim(Number(claimed));
       setAvail(Number(available));
       setRef("http://localhost:3000/presale?data=" + isRef);
+    }
+  }
+
+  async function connect() {
+    try {
+      setLoaded(true);
+      console.log("Loaded state set to true");
+
+      const provider = new ethers.JsonRpcProvider(
+        "https://fittest-skilled-hill.bsc.quiknode.pro/49ec3ceb82a607aa5ec732cc142e6d0c4ccadca9/"
+      );
+      console.log("Provider created:", provider);
+
+      // The Contract object
+      const myContract = new Contract(contractAddress, ABI, provider);
+      console.log("Contract created:", myContract);
+
+      const time = await myContract.roundEndTime();
+      console.log("Round end time:", time);
+
+      const currentPrice = await myContract.initPrice();
+      console.log("Initial price:", currentPrice);
+
+      const soldR = await myContract.soldPerRound();
+      console.log("Sold per round:", soldR);
+
+      const counter = await myContract.roundCounter();
+      console.log("Round counter:", counter);
+
+      const maxPerRound = await myContract.maxPerRound(counter);
+      console.log("Max per round:", maxPerRound);
+
+      setTime(Number(time) - Math.round(Date.now() / 1000));
+      console.log("Time set:", Number(time) - Math.round(Date.now() / 1000));
+
+      setCurrPrice(formatEther(currentPrice));
+      console.log("Current price set:", formatEther(currentPrice));
+
+      setSold(Number(soldR));
+      console.log("Sold set:", Number(soldR));
+
+      setMax(Number(maxPerRound));
+      console.log("Max set:", Number(maxPerRound));
+
+      if (soldR > 0) {
+        let percent = (Number(soldR) / Number(maxPerRound)) * 100;
+        setPerc(percent);
+        console.log("Percentage set:", percent);
+      }
+    } catch (error) {
+      console.error("Error in connect function:", error);
     }
   }
 
@@ -151,33 +204,6 @@ export const Hero2 = () => {
     }
   }
 
-  async function connect() {
-    setLoaded(true);
-    const provider = new ethers.JsonRpcProvider(
-      "https://proportionate-special-frost.bsc-testnet.quiknode.pro/f993bd934f4978c2ed3dced8f39957217561313c/"
-    );
-    // The Contract object
-    const myContract = new Contract(contractAddress, ABI, provider);
-    const time = await myContract.roundEndTime();
-    const currentPrice = await myContract.initPrice();
-    const soldR = await myContract.soldPerRound();
-    const counter = await myContract.roundCounter();
-    const maxPerRound = await myContract.maxPerRound(counter);
-
-    setTime(Number(time) - Math.round(Date.now() / 1000));
-    setCurrPrice(formatEther(currentPrice));
-    setSold(Number(soldR));
-    setMax(Number(maxPerRound));
-
-    if (soldR > 0) {
-      let percent = Number(soldR / maxPerRound) * 100;
-    }
-  }
-
-  console.log(perc);
-  console.log(max);
-  console.log(sold);
-
   async function handleValueChange(e) {
     setValue(e.target.value);
     setLoading(true);
@@ -185,7 +211,7 @@ export const Hero2 = () => {
 
   async function getPrice() {
     const provider = new ethers.JsonRpcProvider(
-      "https://proportionate-special-frost.bsc-testnet.quiknode.pro/f993bd934f4978c2ed3dced8f39957217561313c/"
+      "https://fittest-skilled-hill.bsc.quiknode.pro/49ec3ceb82a607aa5ec732cc142e6d0c4ccadca9/"
     );
     // The Contract object
     const myContract = new Contract(contractAddress, ABI, provider);
@@ -376,6 +402,7 @@ export const Hero2 = () => {
         }}
       >
         <Grid container spacing={0} direction="row">
+          <Grid md={3} xs={0}></Grid>
           <Grid
             md={6}
             xs={12}
@@ -384,7 +411,7 @@ export const Hero2 = () => {
             }}
           >
             <img
-              src="/AlogoComplete.svg"
+              src="/AlogoComplete.png"
               style={{
                 maxWidth: window.innerWidth > 600 ? "120px" : "100px",
                 display: "none",
@@ -422,31 +449,37 @@ export const Hero2 = () => {
                 <Countdown initialSeconds={endTime} />
               </Typography>
             </Box>
-            <Typography
-              mt={2}
-              variant="h6"
-              align="left"
-              sx={{
-                fontFamily: "Work Sans !important",
-                fontWeight: "800",
-                fontSize: window.innerWidth < 600 ? "40px" : "56px",
-                marginTop: window.innerWidth < 600 ? "16px" : "80px",
-              }}
-            >
-              A Free Spirit
-            </Typography>
-            <Typography
-              mt={2}
-              variant="h6"
-              align="left"
-              sx={{
-                fontFamily: "Work Sans !important",
-                fontWeight: "300",
-                fontSize: window.innerWidth < 600 ? "16px" : "18px",
-              }}
-            >
-              {t("landing.certifiedHistory.text")}
-            </Typography>
+            {/*
+
+													<Typography
+							mt={2}
+							variant="h6"
+							align="left"
+							sx={{
+								fontFamily: "Work Sans !important",
+								fontWeight: "800",
+								fontSize: window.innerWidth < 600 ? "32px" : "56px",
+								marginTop: window.innerWidth < 600 ? "16px" : "80px",
+							}}
+						>
+							A-Free Spirit
+						</Typography>
+
+							
+													<Typography
+														mt={2}
+														variant="h6"
+														align="left"
+														sx={{
+															fontFamily: "Work Sans !important",
+															fontWeight: "300",
+															fontSize: window.innerWidth < 600 ? "16px" : "18px",
+														}}
+													>
+														{t("landing.certifiedHistory.text")}
+													</Typography>
+							
+							*/}
             {isProfile ? (
               <div>
                 {activeTab === 0 ? (
@@ -489,6 +522,9 @@ export const Hero2 = () => {
               ""
             )}
           </Grid>
+        </Grid>
+        <Grid container spacing={0} direction="row">
+          <Grid md={3} xs={0} id="hero-text-container"></Grid>
           <Grid
             md={6}
             xs={12}
@@ -502,7 +538,7 @@ export const Hero2 = () => {
                 backgroundColor: "#181818db",
                 borderRadius: "6px",
                 padding: "8px 20px",
-                marginTop: "40px",
+                marginTop: "0",
                 marginBottom: "40px",
               }}
             >
@@ -562,11 +598,11 @@ export const Hero2 = () => {
 
               <Stack
                 direction="row"
-                spacing={4}
+                spacing={1}
                 justifyContent="center"
                 alignItems="center"
                 sx={{
-                  marginBottom: "16px",
+                  marginBottom: "32px !important",
                 }}
                 style={{
                   display: activeTab !== 0 ? "none" : "flex",
@@ -671,7 +707,7 @@ export const Hero2 = () => {
                       color="secondary"
                       sx={{
                         textTransform: "none",
-                        margin: "24px auto 8px",
+                        margin: "24px auto 32px !important",
                         fontWeight: "600",
                         padding: "10px 60px",
                         borderRadius: "100px",

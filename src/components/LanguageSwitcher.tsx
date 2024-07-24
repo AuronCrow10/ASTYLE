@@ -7,6 +7,9 @@ import { useTranslationProvider } from "../providers/TranslationProvider";
 const languages = [
 	{ source: "en", flag: "gb", value: "English" },
 	{ source: "it", flag: "it", value: "Italian" },
+	{ source: "es", flag: "es", value: "Spanish" },
+	{ source: "pt", flag: "pt", value: "Portuguese" },
+	
 ];
 const LanguageSwitcher: React.FC = () => {
 	const [isDropdownOpen, setDropdownOpen] = useState(false);

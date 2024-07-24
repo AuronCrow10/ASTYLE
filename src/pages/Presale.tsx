@@ -20,22 +20,23 @@ import {
 } from "@web3modal/ethers/react";
 import { BrowserProvider, Contract, formatUnits, getAddress } from "ethers";
 import { Container } from "@mui/material";
+import TestScroll from "../components/testScroll";
 
 const projectId = "df8cb4fb25bd233a5125ccd99de3edcd";
 
 // 2. Set chains
 const mainnet = {
-  chainId: 97,
-  name: "BSCTEST",
+  chainId: 56,
+  name: "BNB Smart Chain",
   currency: "BNB",
-  explorerUrl: "https://testnet.bscscan.com",
-  rpcUrl: "https://data-seed-prebsc-1-s1.bnbchain.org:8545",
+  explorerUrl: "https://bscscan.com/",
+  rpcUrl: "https://bsc-dataseed.binance.org/",
 };
 
 // 3. Create a metadata object
 const metadata = {
-  name: "My Website",
-  description: "My Website description",
+  name: "AStyle",
+  description: "A Free Spirit",
   url: "https://mywebsite.com", // origin must match your domain & subdomain
   icons: ["https://avatars.mywebsite.com/"],
 };
@@ -74,8 +75,8 @@ export const Presale = () => {
           }}
         >
           <Hero2 />
-          <Footer></Footer>
         </Container>
+        <Footer></Footer>
       </div>
     </>
   );
